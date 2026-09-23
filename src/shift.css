@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400;1,6..72,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Requested Color Palette */
+  --bg-ivory: #F8F6F1;
+  --primary-deep-sage: #52796F;
+  --secondary-soft-sage: #CAD8D0;
+  --accent-champagne: #C9A96E;
+  --text-charcoal: #263238;
+  --card-white: #FFFFFF;
+
+  /* Derived Micro-tones */
+  --available-bg: #EDF3F0;
+  --available-text: #2D4C44;
+  --flexible-bg: #FAF5EB;
+  --flexible-text: #8C6A2E;
+  --off-bg: #EFECE4;
+  --hairline: rgba(38, 50, 56, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--bg-ivory) !important;
+  color: var(--text-charcoal) !important;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-image: 
+    radial-gradient(circle at 10% 0%, rgba(82, 121, 111, 0.08) 0%, transparent 45%),
+    radial-gradient(circle at 90% 10%, rgba(201, 169, 110, 0.09) 0%, transparent 40%),
+    radial-gradient(circle at 50% 100%, rgba(202, 216, 208, 0.25) 0%, transparent 60%);
+  background-attachment: fixed;
+}
+
+/* White Cards */
+.ceramic-card {
+  background: var(--card-white) !important;
+  border: 1px solid var(--hairline) !important;
+  border-radius: 20px;
+  box-shadow: 
+    0 1px 3px rgba(38, 50, 56, 0.02),
+    0 10px 28px -6px rgba(82, 121, 111, 0.06),
+    0 4px 12px -2px rgba(201, 169, 110, 0.04);
+}
+
+.ceramic-card-subtle {
+  background: #FCFBF8 !important;
+  border: 1px solid var(--secondary-soft-sage) !important;
+  border-radius: 14px;
+}
+
+/* Timeline Track */
+.timeline-row {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  align-items: center;
+  gap: 16px;
+}
+
+.matrix-grid-24 {
+  display: grid;
+  grid-template-columns: repeat(24, minmax(28px, 1fr));
+  gap: 4px;
+}
+
+.matrix-scroll-wrapper {
+  overflow-x: auto;
+  padding-bottom: 6px;
+}
+
+/* Timeline Hour Slots */
+.matrix-slot {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.16s cubic-bezier(0.2, 0.9, 0.4, 1), box-shadow 0.16s ease;
+}
+
+.matrix-slot:hover {
+  transform: translateY(-2px);
+  z-index: 20;
+}
+
+/* Available Hours -> Deep Sage */
+.slot-available {
+  background-color: var(--primary-deep-sage) !important;
+  color: #FFFFFF !important;
+  border: 1px solid var(--secondary-soft-sage) !important;
+  box-shadow: 0 2px 8px rgba(82, 121, 111, 0.25);
+}
+
+/* Flexible Hours -> Champagne Gold */
+.slot-flexible {
+  background-color: var(--accent-champagne) !important;
+  color: #FFFFFF !important;
+  border: 1px solid rgba(201, 169, 110, 0.5) !important;
+  box-shadow: 0 2px 8px rgba(201, 169, 110, 0.25);
+}
+
+/* Off Hours */
+.slot-off {
+  background-color: var(--off-bg) !important;
+  border: 1px solid rgba(38, 50, 56, 0.04) !important;
+  color: transparent !important;
+}
+
+/* Selected Active Hour */
+.slot-selected {
+  outline: 2px solid var(--text-charcoal) !important;
+  outline-offset: 2px;
+  transform: scale(1.08) !important;
+  z-index: 30;
+}
+
+/* Overlap Indicator Chips */
+.chip-available {
+  background-color: var(--available-bg) !important;
+  color: var(--available-text) !important;
+  border: 1px solid var(--secondary-soft-sage) !important;
+}
+
+.chip-flexible {
+  background-color: var(--flexible-bg) !important;
+  color: var(--flexible-text) !important;
+  border: 1px solid rgba(201, 169, 110, 0.45) !important;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  height: 5px;
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--secondary-soft-sage);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-deep-sage);
+}

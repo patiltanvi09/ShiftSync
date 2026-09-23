@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#F8F6F1" />
+    <title>ShiftSync — Distributed Team Timezone Matrix</title>
+    
+    <!-- Modern Editorial Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400;1,6..72,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              ivory: '#F8F6F1',
+              sage: {
+                deep: '#52796F',
+                soft: '#CAD8D0',
+              },
+              champagne: '#C9A96E',
+              charcoal: '#263238',
+            },
+            fontFamily: {
+              serif: ['"Newsreader"', 'Georgia', 'serif'],
+              sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+              mono: ['"DM Mono"', 'monospace'],
+            },
+            gridTemplateColumns: {
+              '24': 'repeat(24, minmax(0, 1fr))',
+            }
+          }
+        }
+      }
+    </script>
+  </head>
+  <body class="bg-[#F8F6F1] text-[#263238] antialiased selection:bg-[#CAD8D0] selection:text-[#263238]">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
